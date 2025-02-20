@@ -1,0 +1,28 @@
+name: Auto-Update Resume
+
+on:
+  push:
+    branches:
+      - main  # Runs when changes are pushed to main
+  schedule:
+    - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
+
+jobs:
+  update_resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Convert Latest Resume (Optional)
+        run: |
+          echo "Updating Resume..."
+          # If your resume is in Markdown or LaTeX, add conversion steps here
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add resume.pdf
+          git commit -m "Auto-update resume"
+          git push
