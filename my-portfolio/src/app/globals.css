@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  min-height: 100%;
+  background: linear-gradient(120deg, #181824 0%, #23243a 100%);
+  font-family: 'Fira Mono', Menlo, Monaco, Consolas, monospace;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.text-accent-green {
+  color: #39ff14;
+}
+.text-accent-pink {
+  color: #e75480;
+}
+.text-accent-purple {
+  color: #a259ff;
+}
+.bg-accent-gradient {
+  background: linear-gradient(90deg, #39ff14 0%, #a259ff 100%);
+}
+.btn-accent {
+  @apply px-6 py-2 rounded-full font-bold text-white bg-accent-gradient shadow-lg transition hover:opacity-90;
+}
+.btn-outline {
+  @apply px-6 py-2 rounded-full font-bold border-2 border-purple-500 text-accent-purple bg-transparent hover:bg-accentPurple hover:text-white transition;
+}
+
+.text-neon {
+  color: #39ff14;
+  font-weight: 600;
+}
+
+body {
+  background: #0a0a0a;
+  color: #e5e5e5;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #18181b;
+}
+::-webkit-scrollbar-thumb {
+  background: #39ff14;
+  border-radius: 8px;
+}
